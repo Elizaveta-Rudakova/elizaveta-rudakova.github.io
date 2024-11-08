@@ -1,12 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='switcher.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='level-range.css') }}">
 </head>
 <body>
-    <p>Hello</p>
+<div class="container">
+    <form method="POST" action="/">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+<!--        <div class="flex">-->
+<!--            <label for="allow_direct_messages">Allow Direct Messages?</label>-->
+<!--            <div class="toggle-switch">-->
+<!--                <input type="checkbox" id="allow_direct_messages" name="allow_direct_messages">-->
+<!--                <span class="slider"></span>-->
+<!--            </div>-->
+<!--        </div>-->
+        
+        <div class="toggle-box">
+            <p>Allow Direct Messages?</p>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle" class="toggle-checkbox">
+              <label for="toggle" class="toggle-label"></label>
+            </div>
+        </div>
+
+        <!-- <div class="level-container">
+            <label>Select Your Level</label>
+            <div class="level-slider-container">
+                <span class="level-label">Novice</span>
+                <input type="range" id="level" name="level" min="0" max="100" step="1">
+                <span class="level-label">Master</span>
+            </div>
+        </div> -->
+
+        <div class="level-range">
+            <div class="range-value-box-1">
+                <p class="range-title">Select your level<span></span></p>
+                <p class="range-title">Intermediate<span id="range-result"></span></p>                
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="range">
+            <div class="range-value-box-2">
+                <p class="range-title">Beginner<span id="range-value"></span></p>
+                <p class="range-title">Pro<span id="range-value"></span></p>                
+            </div>
+        </div>
+
+        <label>Select Preferred Days</label>
+        <div class="days">
+            <label><input type="checkbox" name="preferred_days" value="mon"> Mon</label>
+            <label><input type="checkbox" name="preferred_days" value="tue"> Tue</label>
+            <label><input type="checkbox" name="preferred_days" value="wed"> Wed</label>
+            <label><input type="checkbox" name="preferred_days" value="thu"> Thu</label>
+            <label><input type="checkbox" name="preferred_days" value="fri"> Fri</label>
+            <label><input type="checkbox" name="preferred_days" value="sat"> Sat</label>
+            <label><input type="checkbox" name="preferred_days" value="sun"> Sun</label>
+        </div>
+
+        <button type="submit" id="next-button" disabled>Next</button>
+    </form>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
