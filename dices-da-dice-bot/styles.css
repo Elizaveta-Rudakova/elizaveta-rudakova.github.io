@@ -12,7 +12,8 @@ body {
 }
 
 .container {
-    width: 200px
+    width: 90%;
+    height: 90%;
     padding: 20px;
     border: 0px;
     border-radius: 10px;
