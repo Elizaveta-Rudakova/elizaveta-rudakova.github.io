@@ -11,6 +11,14 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.container {
+    padding: 20px;
+    border: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #faebd7;
+}
+
 #game {
     text-align: center;
 }
